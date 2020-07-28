@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>TrafficRules</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+  <style>
+   .body {
+     font: 400 15px/1.8 Lato, sans-serif;
+     color: #777;
+    }
+        .button {
+        border-radius: 5px;
+        background-color: #4F4949;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .button:hover span {
+        padding-right: 25px;
+      }
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      
+      .button {
+        border-radius: 5px;
+        background-color: #4F4949;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      
+      
+        h3, h4 {
+          margin: 10px 0 30px 0;
+          letter-spacing: 10px;      
+          font-size: 20px;
+          color: #111;
+        }
+      
+        .bg-3
+      {
+          background-color: #2d2d30; 
+      }
+        .container {
+          padding: 80px 120px;
+        }
+        .person {
+          border: 10px solid transparent;
+          margin-bottom: 25px;
+          width: 80%;
+          height: 80%;
+          opacity: 0.7;
+        }
+        .person:hover {
+          border-color: #f1f1f1;
+        }
+        .carousel-inner img {
+          
+          width: 100%; /* Set width to 100% */
+          margin: auto;
+        }
+        .carousel-caption h3 {
+          color: #fff !important;
+        }
+        @media (max-width: 600px) {
+          .carousel-caption {
+            display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+          }
+        }
+        .bg-1 {
+          background: #2d2d30;
+          text-align:center;
+          color: #bdbdbd;
+        }
+        .bg-1 h3 {color: #fff;}
+        .bg-1 p {font-style: italic;}
+        .list-group-item:first-child {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+        .bg-2 {
+          background: #ffffff;
+          text-align:center;
+          color: #bdbdbd;
+        }
+        .bg-2 h3 {color: #000000;}
+        .bg-2 p {font-style: italic;}
+        .list-group-item:first-child {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+        .list-group-item:last-child {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        .thumbnail {
+          padding: 15px 15px 15px 15px;
+          border: none;
+          border-radius: 0;
+        }
+        .thumbnail p {
+          margin-top: 15px;
+          color: #555;
+        }
+        .btn {
+          padding: 10px 20px;
+          background-color: #333;
+          color: #f1f1f1;
+          border-radius: 0;
+          transition: .2s;
+        }
+        .btn:hover, .btn:focus {
+          border: 1px solid #333;
+          background-color: #fff;
+          color: #000;
+        }
+        
+        .nav-tabs li a {
+          color: #777;
+        } 
+        
+        .navbar {
+          font-family: Montserrat, sans-serif;
+          margin-bottom: 0;
+          background-color: #2d2d30;
+          border: 0;
+          font-size: 12px !important;
+          letter-spacing: 4px;
+          opacity: 1.8;
+        }
+        .navbar li a, .navbar .navbar-brand { 
+          color: #d5d5d5 !important;
+        }
+        .navbar-nav li a:hover {
+          color: #fff !important;
+        }
+        .navbar-nav li.active a {
+          color: #fff !important;
+          background-color: #29292c !important;
+        }
+        .navbar-default .navbar-toggle {
+          border-color: transparent;
+        }
+        .open .dropdown-toggle {
+          color: #fff;
+          background-color: #555 !important;
+        }
+        .dropdown-menu li a {
+          color: #000 !important;
+        }
+        .dropdown-menu li a:hover {
+          background-color: rgb(53, 48, 48) !important;
+        }
+        footer {
+          background-color: #2d2d30;
+          color: #f5f5f5;
+          padding: 32px;
+        }
+        footer a {
+          color: #f5f5f5;
+        }
+        footer a:hover {
+          color: #777;
+          text-decoration: none;
+        }  
+        .form-control {
+          border-radius: 0;
+        }
+        textarea {
+          resize: none;
+        }
+   </style>
+</head>
+<body id="myPage bg-3" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="./index.html">TRAFFICRULES.COM</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="#rules">TRAFFIC RULES</a></li>
+        <li><a href="#signs">TRAFFIC SIGNS</a></li>
+        <li><a href="#videos">VIDEOS</a></li>
+        <li><a href="#fines">INFORMATION</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#contact">CONTACT US</a></li>
+            <li><a href="#fandt">FEEDBACK</a></li>
+            <li><a href="#fandt">TESTIMONIALS</a></li> 
+          </ul>
+        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+    
+  </div>
+  
+</nav>
+
+<div id="myCar" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTMemcaUaGy0jiOO06u-b2gDP0lOZ93WWCDJ0g58qCz6gL--D5" alt="New York" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>Traffic rules</h3>
+          <p>it is necessary to follow traffic rules</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="https://www.lawnn.com/wp-content/uploads/2019/09/Not-carrying-Driving-Licence-Vehicle-Registration-Apps-that-can-save-you.jpg" alt="Chicago" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>Traffic regulation</h3>
+          <p>If rules are violated, fine must be paid</p>
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRra3VGKWO0HdriMKq3P1s_1tsOwpfdiiLT5yGnqb42GgbkXMny" alt="Los Angeles" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>Traffic Signs</h3>
+          <p>Traffic signs are necessary indications</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+<div id="rules" class="container text-center">
+        <h3>THE TRAFFFIC RULES</h3>
+        <p><em>Why should we follow them?</em></p>
+        <p>The importance of traffic signs and road rules cannot be ignored in one’s life and it
+             should be given paramount importance. Any driver who is driving a vehicle on the road
+              should be aware of all the traffic signs and rules. The government has already made it
+               mandatory for any person who wishes to obtain a driving licence in India for the different traffic signs and
+                rules.<br>
+                <p> <br>
+                </p> <br>
+                <a href="./rules.html" class="button" role="button"><span>HERE</span></a>
+        </p>
+</div>
+
+<div id="signs" class="bg-1">
+  <div class="container">
+    <h3>THE TRAFFIC SIGNS</h3>
+  <p><em>What are the different types of signs?</em></p>
+  <p>Traffic signs are divided into three basic categories: regulatory, warning, and guide signs. 
+      The shape of a traffic sign communicates important information about the sign's message. 
+      In poor visibility conditions, such as heavy fog, you may be able to make out only the shape of a sign.
+       The following section will give you an understanding of the signs that are commonly used on the US roads. 
+       Neglecting to obey the road signs results in a traffic violation, but to obey the sign, everyone on the road, 
+       regardless of whether you are a pedestrian or a driver, needs to know the meaning of each specific sign
+       Read the following section to get to know how they differ from each other by the color and shape.<br>
+       <p> <br>
+       </p> <br>
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSV5z8f3Grrfs7jq0NixXXZMnyYC9rnl8WZ1x6VawjlJBYGMDhP" alt="Mandatory_signs" width="400" height="300">
+          <p><strong>MANDATORY SIGNS</strong></p>
+          <p>For more information about it , click the button bellow</p>
+          <a href="./signs.html" class="button" role="button"><span>HERE</span></a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSV5z8f3Grrfs7jq0NixXXZMnyYC9rnl8WZ1x6VawjlJBYGMDhP" alt="Informatory_signs" width="400" height="300">
+          <p><strong>INFORMATORY SIGNS</strong></p>
+          <p>For more information about it , click the button bellow</p>
+          <a href="./signs.html" class="button" role="button"><span>HERE</span></a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSV5z8f3Grrfs7jq0NixXXZMnyYC9rnl8WZ1x6VawjlJBYGMDhP" alt="Cautionary_signs" width="400" height="300">
+           <p><strong>CAUTIONATORY SIGNS</strong></p>
+              <p>For more information about it , click the button bellow</p>
+              <a href="./signs.html" class="button" role="button"><span>HERE</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="videos" class="bg-2 text-center">
+        <p> <br>
+        </p> <br>
+        <h3> INTERACTIVE VIDEOS </h3>
+        <p><em>Videos on Rules and Signs</em></p>
+        <p>CLick on the button below to watch video regarding traffic rules and regualations.<br>
+                <p> <br>
+                  <a href="./videos.html" class="button" role="button"><span>HERE</span></a>
+            </p> <br>
+        </p>
+</div>
+
+<div id="fines" class="container text-center">
+       
+         <h3> FINES AND PENALTIES </h3>
+        <p><em></em></p>
+        <p>CLick on the button below to know more about fines and penalties regarding breaking
+             of traffic rules and regulations.<br>
+                <p> <br>
+                  <a href="./fines.html" class="button" role="button"><span>HERE</span></a>
+                 </p>
+</div>
+
+<img src="map.jpg" class="img-responsive" style="width:100%">
+
+<div id="fandt" class="bg-2 text-center">
+        <p> <br>
+        </p> <br>
+        <h3> FEEDBACK AND TESTIMONIALS </h3>
+        <p><em>Link to feedback and testimonials of users</em></p>
+        <p>CLick on the button below to write a feedback regarding our website adn testimonials of our users.<br>
+                <p> <br>
+                <a href="./test.html" class="button" role="button"><span>HERE</span></a>
+            </p> <br>
+        </p>
+</div>
+
+
+<div id="contact" class="container">
+   
+  <h3 class="text-center">Contact Us</h3>
+  <br>
+  <!-- <p class="text-center"><em>WE RESPOND IMMEDIATELY</em></p> -->
+
+  <div class="row">
+    <div class="col-md-4">
+      <!-- <p>Want more information? Drop a message.</p> -->
+      <p><span class="glyphicon glyphicon-map-marker"></span>Bangalore, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: +91 9898454523</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: trafficrules@gmail.com</p>
+    </div>
+    <p><em> Or drop us a message </em></p>
+    <br>
+    <a href="./fandt.php" class="button" role="button"><span>HERE</span></a>
+
+    <!-- <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="btn pull-right" type="submit">Send</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+</div>
+
+<div class="bg-2">
+    <p></p>
+    <br>
+  <h3 class="text-center">WEBSITE BY</h3>  
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Amrutha Umesh</a></li>
+    <li><a data-toggle="tab" href="#menu1">Anusha Malavalli</a></li>
+    
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>5th semester , A section</h2>
+      <p>4NM17CS017, COMPUTER SCIENCE</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>5th semester , A section</h2>
+      <p>4NM17CS029, COMPUTER SCIENCE</p>
+      <p></p>
+        <br>
+        <p></p>
+    </div>
+    <p></p>
+    <br>
+   </div>
+  </div>
+
+
+<!-- Image of location/map -->
+
+
+<!-- Footer -->
+<footer class="bg-3 text-center">
+  <a class="up-arrow" href="#myCar" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+ </footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
